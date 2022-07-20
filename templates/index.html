@@ -21,8 +21,8 @@
 
     <div class="audio-section">
       {% for audio in audio_files %}
-        <a href="{{ url_for('serve_audio', filename=audio) }}" >
-          <audio controls src="{ url_for('serve_audio', filename=audio) }}"></audio>
+        <a href="{{ url_for('play_audio', filename=audio) }}" >
+          <audio controls src="{ url_for('play_audio', filename=audio) }}"></audio>
         </a>
       {% endfor %}
     </div>
