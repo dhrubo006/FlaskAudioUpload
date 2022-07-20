@@ -20,7 +20,7 @@ def index():
         if os.path.splitext(file)[1].lower() in app.config['ALLOWED_EXTENSIONS']:
             audio_files.append(file)
 
-    return render_template('index.html', audio_files=audio)
+    return render_template('index.html', audio_files=audio_files)
 
 
 @app.route('/upload', methods=['POST'])
@@ -45,7 +45,7 @@ def upload():
     return redirect('/')
 
 
-@app.route('/play-audio/<filename>', methods=['GET'])
+@app.route('/play_audio/<filename>', methods=['GET'])
 def play_audio(filename):
     return send_from_directory(app.config['UPLOAD_DIRECTORY'], filename)
 
